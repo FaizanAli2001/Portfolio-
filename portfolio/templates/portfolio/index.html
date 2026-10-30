@@ -1,0 +1,160 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07070b">
+  <meta name="description" content="Faizan Ali — Full Stack Software Engineer building modern web applications with Python and Django.">
+  <title>Faizan Ali — Full Stack Software Engineer</title>
+  <script>
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem("portfolio-theme") || "dark";
+    } catch (error) {
+      console.warn("Could not load the saved theme preference.", error);
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'portfolio/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'portfolio/css/contact.css' %}">
+  <link rel="stylesheet" href="{% static 'portfolio/css/dark-theme.css' %}">
+  <script type="importmap">
+    {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}
+  </script>
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Faizan Ali home"><span class="brand-mark">F</span><span>FAIZAN<span class="muted">.DEV</span></span></a>
+    <div class="header-controls">
+      <button class="theme-toggle" type="button" aria-label="Switch to day mode" title="Switch to day mode">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.2A8.5 8.5 0 0 1 8.8 3.8 8.7 8.7 0 1 0 20.2 15.2Z"></path></svg>
+      </button>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
+    </div>
+    <nav class="nav-links">
+      <a href="#about">About</a><a href="#stack">Stack</a><a href="#projects">Projects</a><a href="#journey">Journey</a>
+      <a class="nav-contact" href="#contact">Let's talk <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-shell" id="home">
+      <div class="hero-grid"></div>
+      <div class="hero-copy">
+        <div class="eyebrow reveal"><span class="status-dot"></span> FULL STACK SOFTWARE ENGINEER <span class="eyebrow-line"></span> PAKISTAN</div>
+        <h1 class="hero-title reveal">Building the<br><span class="gradient-text">web,</span> beyond<br>the ordinary<span class="accent">.</span></h1>
+        <p class="hero-intro reveal">I’m Faizan — a software engineer focused on building thoughtful, reliable and engaging web experiences with Python, Django and modern frontend technologies.</p>
+        <div class="hero-actions reveal">
+          <a class="button button-primary" href="#projects">Explore my work <span>↘</span></a>
+          <a class="button button-github" href="https://github.com/FaizanAli2001" target="_blank" rel="noopener noreferrer">GitHub profile <span>↗</span></a>
+        </div>
+        <div class="hero-meta reveal"><span>01 / 04</span><span class="meta-rule"></span><span>SCROLL TO EXPLORE</span></div>
+      </div>
+      <div class="hero-visual" aria-label="Interactive 3D neon artwork">
+        <div class="visual-label label-top"><span>LIVE / 3D FIELD</span><span class="tiny-cross">✳</span></div>
+        <canvas id="scene-canvas"></canvas>
+        <div class="visual-coordinate">33°41' N<br>73°03' E</div>
+        <div class="visual-label label-bottom"><span>INTERACTIVE EXPERIENCE</span><span>MOVE YOUR CURSOR ↗</span></div>
+      </div>
+      <div class="hero-bottom-line"><span>DESIGN MINDED. ENGINEERING LED.</span><span>SCROLL <span class="scroll-arrow">↓</span></span></div>
+    </section>
+
+    <section class="about section-shell section-pad" id="about">
+      <div class="section-kicker reveal"><span>01</span> / A LITTLE ABOUT ME</div>
+      <div class="about-layout">
+        <h2 class="section-heading reveal">Curiosity turned<br>into <span class="gradient-text">craft.</span></h2>
+        <div class="about-copy reveal">
+          <h3 class="about-professional-title">Full Stack Software Engineer</h3>
+          <p>I'm Faizan Ali, a Computer Science graduate and Full Stack Software Engineer. I work with Python, Django, SQL, and modern web technologies to build responsive applications and reliable backend solutions. I enjoy learning new technologies, solving real-world problems, and turning ideas into functional digital products.</p>
+          <div class="about-facts">
+            <div><strong>2024</strong><span>CS GRADUATE</span></div>
+            <div><strong>Python</strong><span>CORE LANGUAGE</span></div>
+            <div><strong>Data & Cloud</strong><span>CURRENT FOCUS</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stack-section section-shell section-pad" id="stack">
+      <div class="section-kicker reveal"><span>02</span> / THE TOOLKIT</div>
+      <div class="stack-head"><h2 class="section-heading reveal">Tools I use to<br><span class="gradient-text">make things work.</span></h2><p class="reveal">A practical toolkit across backend development, frontend implementation and data.</p></div>
+      <div class="skill-grid">
+        <article class="skill-card reveal"><span class="skill-index">01</span><div class="skill-icon" role="img" aria-label="Python icon"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="#55c7e8" d="M15.7 3.2c-6.1 0-5.7 2.7-5.7 2.7v3.7h5.8v1.1H7.7S3.5 10.2 3.5 16s3.7 5.6 3.7 5.6h2.2v-3.1s-.1-3.7 3.7-3.7h6.4s3.5.1 3.5-3.4V6.8s.5-3.6-7.3-3.6ZM12.5 6a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/><path fill="#ffd34e" d="M16.3 28.8c6.1 0 5.7-2.7 5.7-2.7v-3.7h-5.8v-1.1h8.1s4.2.5 4.2-5.3-3.7-5.6-3.7-5.6h-2.2v3.1s.1 3.7-3.7 3.7h-6.4S9 17.1 9 20.6v4.6s-.5 3.6 7.3 3.6Zm3.2-2.8a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z"/></svg></div><h3>Python</h3><p>Backend logic, scripting and application development.</p><span class="skill-type">LANGUAGE</span></article>
+        <article class="skill-card reveal"><span class="skill-index">02</span><div class="skill-icon" role="img" aria-label="Django icon"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M9 3h7v4h7v5h-7v8c0 2.2.8 3.1 3 3.1 1.3 0 2.6-.3 4-.8v5.1c-1.8.8-3.8 1.2-6 1.2-5.4 0-8-2.5-8-7.8V3Z"/><path fill="currentColor" d="M23 3h6v5h-6z"/></svg></div><h3>Django</h3><p>Models, authentication, views, APIs and ORM workflows.</p><span class="skill-type">BACKEND</span></article>
+        <article class="skill-card reveal"><span class="skill-index">03</span><div class="skill-icon" role="img" aria-label="JavaScript icon"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="#f2d45c" d="M4 4h24v24H4z"/><path fill="#242338" d="M19.2 22.3c.5.9 1.2 1.5 2.4 1.5 1 0 1.6-.5 1.6-1.2 0-.8-.6-1.1-1.8-1.7l-.7-.3c-2-.9-3.3-2-3.3-4.3 0-2.1 1.6-3.7 4.1-3.7 1.8 0 3.1.6 4 2.2l-2.2 1.4c-.5-.8-.9-1.1-1.7-1.1-.7 0-1.1.4-1.1 1 0 .7.4 1 1.4 1.4l.7.3c2.4 1 3.7 2.1 3.7 4.4 0 2.5-2 3.9-4.7 3.9-2.6 0-4.2-1.2-5.1-2.8l2.7-1Zm-10.1.2c.4.7.8 1.3 1.7 1.3.8 0 1.3-.3 1.3-1.6v-8.8h3.1v8.9c0 3.2-1.9 4.6-4.3 4.6-2.3 0-3.7-1.2-4.4-2.7l2.6-1.7Z"/></svg></div><h3>JavaScript</h3><p>Interactive interfaces and browser-side functionality.</p><span class="skill-type">FRONTEND</span></article>
+        <article class="skill-card reveal"><span class="skill-index">04</span><div class="skill-icon" role="img" aria-label="SQL database icon"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><ellipse cx="16" cy="7" rx="10" ry="4" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M6 7v17c0 2.2 4.5 4 10 4s10-1.8 10-4V7M6 15c0 2.2 4.5 4 10 4s10-1.8 10-4M6 23c0 2.2 4.5 4 10 4s10-1.8 10-4" fill="none" stroke="currentColor" stroke-width="2.4"/></svg></div><h3>SQL</h3><p>Relational data, queries and database fundamentals.</p><span class="skill-type">DATABASE</span></article>
+        <article class="skill-card reveal"><span class="skill-index">05</span><div class="skill-icon" role="img" aria-label="HTML and CSS icon"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="#e76f51" d="m4 3 2.2 24L16 30l9.8-3L28 3H4Z"/><path fill="#f4a261" d="M16 5H6.5l1.8 20.1 7.7 2.3V5Z"/><path fill="#fff" d="M22.8 10H11l.3 3h11.2l-.8 9.5-5.7 1.7-5.8-1.7-.4-4.4h3l.2 2.1 3 .9 2.9-.9.3-4.2H10l-.8-8.9h13.9z"/></svg></div><h3>HTML & CSS</h3><p>Responsive layouts, accessible structure and styling.</p><span class="skill-type">FRONTEND</span></article>
+        <article class="skill-card reveal"><span class="skill-index">06</span><div class="skill-icon" role="img" aria-label="Git branching icon"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M10 7v18M10 12c0 6 12 1 12 8V25" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="10" cy="6" r="3" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="10" cy="26" r="3" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="22" cy="26" r="3" fill="none" stroke="currentColor" stroke-width="2.5"/></svg></div><h3>Git & GitHub</h3><p>Version control, branching and collaborative workflows.</p><span class="skill-type">WORKFLOW</span></article>
+      </div>
+    </section>
+
+    <section class="projects section-shell section-pad" id="projects">
+      <div class="section-kicker reveal"><span>03</span> / SELECTED WORK</div>
+      <div class="projects-heading"><h2 class="section-heading reveal">Built with purpose.<br><span class="gradient-text">Made to be useful.</span></h2><p class="reveal">A selection of projects where I’ve applied my skills to real application patterns and practical problems.</p></div>
+      <div class="project-list">
+        <article class="project-card reveal">
+          <div class="project-art chat-art"><div class="art-window"><div class="window-top"><i></i><i></i><i></i><span>messages.app</span></div><div class="chat-layout"><div class="chat-side"><b></b><b></b><b></b></div><div class="chat-main"><span class="bubble bubble-left"></span><span class="bubble bubble-right"></span><span class="bubble bubble-left short"></span><span class="chat-input"></span></div></div></div><span class="art-number">01</span></div>
+          <div class="project-info"><div class="project-meta"><span>DJANGO / SQLITE / REAL-TIME STYLE UI</span><span>2026</span></div><h3>Chat Web App</h3><p>A user-to-user messaging application with registration, authentication, user listings and database-persisted conversations.</p><div class="tag-row"><span>Authentication</span><span>Django ORM</span><span>Git</span></div><a class="project-link" href="https://github.com/FaizanAli2001/Chat-Web-App-Django" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a></div>
+        </article>
+        <article class="project-card project-reverse reveal">
+          <div class="project-art blog-art"><div class="blog-sheet"><div class="blog-line wide"></div><div class="blog-line"></div><div class="blog-image"></div><div class="blog-line wide"></div><div class="blog-line"></div><div class="blog-line small"></div></div><span class="art-number">02</span></div>
+          <div class="project-info"><div class="project-meta"><span>DJANGO / SQLITE / CRUD</span><span>2026</span></div><h3>Blog Application</h3><p>A content publishing platform featuring user authentication, post creation and editing, rich text content and comments.</p><div class="tag-row"><span>CRUD</span><span>Rich Text</span><span>Comments</span></div><a class="project-link" href="https://github.com/FaizanAli2001/Blog-application-django" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-art weather-art"><div class="weather-widget"><div class="weather-sun"></div><span class="weather-city">LAHORE, PK</span><strong>28°</strong><span class="weather-desc">PARTLY CLOUDY</span><div class="weather-bars"><i></i><i></i><i></i><i></i><i></i></div></div><span class="art-number">03</span></div>
+          <div class="project-info"><div class="project-meta"><span>DJANGO / OPENWEATHER API</span><span>2026</span></div><h3>Weather App</h3><p>A weather application that connects to the OpenWeather API to retrieve and display current weather information for a searched city.</p><div class="tag-row"><span>REST API</span><span>JSON</span><span>API Integration</span></div><a class="project-link" href="https://github.com/FaizanAli2001/weather-app-django" target="_blank" rel="noreferrer">View on GitHub <span>↗</span></a></div>
+        </article>
+      </div>
+      <div class="more-work reveal"><span>MORE EXPERIMENTS & CODE</span><a href="https://github.com/FaizanAli2001" target="_blank" rel="noreferrer">Explore GitHub ↗</a></div>
+    </section>
+
+    <section class="journey section-shell section-pad" id="journey">
+      <div class="section-kicker reveal"><span>04</span> / THE JOURNEY</div>
+      <div class="journey-layout">
+        <h2 class="section-heading reveal">Learning.<br>Building.<br><span class="gradient-text">Moving forward.</span></h2>
+        <div class="timeline">
+          <article class="timeline-item reveal"><span class="timeline-date">2024 — PRESENT</span><div><h3>Full Stack Software Engineering</h3><p>Building Django applications and strengthening backend, database and frontend development skills through hands-on projects.</p></div><span class="timeline-dot"></span></article>
+          <article class="timeline-item reveal"><span class="timeline-date">AUG — SEP 2023</span><div><h3>Web Development Intern · CyberX Studio</h3><p>Worked on frontend tasks using HTML, CSS and JavaScript, with exposure to digital marketing, SEO and design workflows.</p></div><span class="timeline-dot"></span></article>
+          <article class="timeline-item reveal"><span class="timeline-date">FEB — MAR 2024</span><div><h3>Volunteer · Rahma Islamic Relief</h3><p>Supported education initiatives, career counselling, teacher support and student outreach activities.</p></div><span class="timeline-dot"></span></article>
+          <article class="timeline-item reveal"><span class="timeline-date">SEP 2024</span><div><h3>BS Computer Science · CUST</h3><p>Capital University of Science & Technology, Islamabad.</p></div><span class="timeline-dot"></span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="credentials section-shell">
+      <div class="credential-block reveal"><span class="section-kicker">CERTIFICATIONS</span><h2>Keep learning.<br><span class="gradient-text">Keep shipping.</span></h2><ul>
+        <li><a href="https://github.com/FaizanAli2001/Certificates/blob/main/Specialization%20certificate%20of%20data%20engineering.pdf" target="_blank" rel="noopener noreferrer"><span>Data Engineering Specialization</span><small>VIEW CERTIFICATE ↗</small></a></li>
+        <li><a href="https://github.com/FaizanAli2001/Certificates/blob/main/Intro%20to%20Data%20Engineering.pdf" target="_blank" rel="noopener noreferrer"><span>Introduction to Data Engineering</span><small>VIEW CERTIFICATE ↗</small></a></li>
+        <li><a href="https://github.com/FaizanAli2001/Certificates/blob/main/ETL%20and%20Data%20Pipelines%20with%20Shell%2C%20Airflow%20and%20Kafka.pdf" target="_blank" rel="noopener noreferrer"><span>ETL and Data Pipelines with Shell, Airflow and Kafka</span><small>VIEW CERTIFICATE ↗</small></a></li>
+        <li><a href="https://github.com/FaizanAli2001/Certificates/blob/main/Introduction%20to%20Big%20Data%20with%20Spark%20and%20Hadoop.pdf" target="_blank" rel="noopener noreferrer"><span>Introduction to Big Data with Spark and Hadoop</span><small>VIEW CERTIFICATE ↗</small></a></li>
+        <li><a href="https://github.com/FaizanAli2001/Certificates/blob/main/Data%20Warehouse%20Fundamentals.pdf" target="_blank" rel="noopener noreferrer"><span>Data Warehouse Fundamentals</span><small>VIEW CERTIFICATE ↗</small></a></li>
+        <li><a href="https://github.com/FaizanAli2001/Certificates/blob/main/Python%20Projects%20for%20Data%20Engineerind.pdf" target="_blank" rel="noopener noreferrer"><span>Python Projects for Data Engineering</span><small>VIEW CERTIFICATE ↗</small></a></li>
+        <li><a href="https://github.com/FaizanAli2001/Certificates/blob/main/Relational%20Database%20Administration%20(DBA).pdf" target="_blank" rel="noopener noreferrer"><span>Relational Database Administration</span><small>VIEW CERTIFICATE ↗</small></a></li>
+        <li><a href="https://github.com/FaizanAli2001/Certificates/blob/main/Intro%20to%20RDBMS.pdf" target="_blank" rel="noopener noreferrer"><span>Introduction to RDBMS</span><small>VIEW CERTIFICATE ↗</small></a></li>
+        <li><a href="https://github.com/FaizanAli2001/Certificates/blob/main/Introduction%20to%20NoSql%20databases.pdf" target="_blank" rel="noopener noreferrer"><span>Introduction to NoSQL Databases</span><small>VIEW CERTIFICATE ↗</small></a></li>
+      </ul></div>
+    </section>
+
+    <section class="contact section-shell section-pad" id="contact">
+      <div class="contact-glow"></div>
+      <div class="section-kicker reveal"><span>05</span> / HAVE A PROJECT IN MIND?</div>
+      <div class="contact-content reveal"><p class="eyebrow">LET'S BUILD SOMETHING GOOD</p><h2>Have an idea?<br><span class="gradient-text">Let’s make it real.</span></h2><p class="contact-copy">Tell me what you need, and I’ll get back to you by email.</p>
+        <div class="contact-details">
+          <a href="mailto:faizanalyhh@gmail.com"><span>EMAIL</span>faizanalyhh@gmail.com</a>
+          <a href="tel:+923095590082"><span>PHONE</span>+92 309 5590082</a>
+        </div>
+        <a class="contact-whatsapp" href="https://wa.me/923095590082" target="_blank" rel="noopener noreferrer" aria-label="Message or call Faizan on WhatsApp">Chat on WhatsApp <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer section-shell"><a class="brand" href="#home"><span class="brand-mark">F</span><span>FAIZAN<span class="muted">.DEV</span></span></a><span>DESIGNED & BUILT WITH CURIOSITY.</span><div><a href="https://github.com/FaizanAli2001" target="_blank" rel="noreferrer">GITHUB ↗</a><a href="#home">BACK TO TOP ↑</a></div><small>© 2026 FAIZAN ALI</small></footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script type="module" src="{% static 'portfolio/js/main.js' %}"></script>
+</body>
+</html>
