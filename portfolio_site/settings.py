@@ -1,9 +1,22 @@
+import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "change-this-before-deployment"
 DEBUG = True
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "myportfolio-seven-neon-21.vercel.app",
+]
+ALLOWED_HOSTS.extend(
+    host.strip()
+    for host in os.environ.get("ALLOWED_HOSTS", "").split(",")
+    if host.strip()
+)
+vercel_url = os.environ.get("VERCEL_URL", "").strip()
+if vercel_url:
+    ALLOWED_HOSTS.append(vercel_url.removeprefix("https://").removeprefix("http://").rstrip("/"))
 
 INSTALLED_APPS = [
     "django.contrib.staticfiles",
