@@ -21,7 +21,7 @@ Open http://127.0.0.1:8000
 
 1. Add your LinkedIn profile URL to the footer once you have the exact URL.
 2. Review project dates, descriptions and experience wording for accuracy.
-3. Set `DEBUG = False`, use an environment-based `SECRET_KEY`, and follow Django deployment guidance before production. `ALLOWED_HOSTS` includes the production and current branch Vercel domains and can be extended with a comma-separated `ALLOWED_HOSTS` environment variable or Vercel's `VERCEL_URL`.
+3. Set `DEBUG = False`, use an environment-based `SECRET_KEY`, and follow Django deployment guidance before production. `ALLOWED_HOSTS` includes the production, current branch, and requested Vercel domains and can be extended with a comma-separated `ALLOWED_HOSTS` environment variable or Vercel's `VERCEL_URL`.
 4. Three.js and GSAP are loaded from CDNs; the 3D canvas needs WebGL. The page keeps its visual layout if animation libraries fail to load.
 
 ## Main technologies
