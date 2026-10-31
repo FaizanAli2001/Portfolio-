@@ -10,6 +10,7 @@ ALLOWED_HOSTS = [
     "myportfolio-seven-neon-21.vercel.app",
     "myportfolio-git-main-faizyali750-2351.vercel.app",
     "faizan-portfolio.vercel.app",
+    "faizanali--portfolio.vercel.app",
 ]
 ALLOWED_HOSTS.extend(
     host.strip()
