@@ -8,6 +8,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     "myportfolio-seven-neon-21.vercel.app",
+    "myportfolio-git-main-faizyali750-2351.vercel.app",
 ]
 ALLOWED_HOSTS.extend(
     host.strip()
